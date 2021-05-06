@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-top: 30px;display: flex;justify-content: center;">
+            <div style="border:1px solid ;width: 600px; display: flex; padding: 30px;justify-content: center;flex-direction: column;align-items: center;">
+                <h2>Detail</h2>
+                <h1>제목 : {{ article.title }}</h1>
+                <p>내용 : {{ article.content }}</p>
+                <p>작성일자 : {{ article.created_at }}</p>
+                <p>수정일자 : {{ article.updated_at }}</p>
+                <a href="/articles/{{ article.pk }}/edit/">Edit</a>
+                <a href="/articles/{{ article.pk }}/delete/">Delete</a>
+                <br>
+                <a href="/articles/">Back</a>            
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

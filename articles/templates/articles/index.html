@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-top: 30px;display: flex;justify-content: center;">
+            <div style="border:1px solid ;width: 600px; display: flex; padding: 30px;justify-content: center;flex-direction: column;align-items: center;">
+                <div class="col-sm-12"  style="margin-bottom: 30px; width: 200px; text-align: center;">
+                    <h2>게시판</h2>
+                    <a href='/articles/new/'>New</a>
+                </div>
+                
+                {% for article in articles %}
+                    <div class="col-sm-12 " style="margin-bottom: 30px;width: 200px; text-align: center;">
+                        <h2>제목 : {{ article.title }}</h2>
+                        <h2>내용 : {{ article.content }}</h2>
+                        <a href="/articles/{{ article.pk }}">DETAIL</a>
+                    </div>
+                {% endfor %}            
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

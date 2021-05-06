@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-top: 30px;display: flex;justify-content: center;">
+            <div style="border:1px solid ;width: 600px; display: flex; padding: 30px;justify-content: center;flex-direction: column;align-items: center;">
+                <h2>Edit</h2>          
+                <form action="/articles/{{ article.pk }}/update/">
+                    <div class="col-sm-12">
+                        Title :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="title" value="{{ article.title }}">
+                    </div>
+                    <br>
+                    <div class="col-sm-12">
+                        Content : <textarea name="content" cols="30" rows="15">{{ article.content }}</textarea>
+                    </div>
+                    <Br>
+                    <div style="text-align: center;">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+                <a href="/articles/">Back</a>  
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
